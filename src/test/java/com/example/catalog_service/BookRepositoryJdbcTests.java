@@ -33,7 +33,7 @@ class BookRepositoryJdbcTests{
 
     @Test
    void  testFindBysIbn(){
-        String bookIsbn = "1231231231";
+        String bookIsbn = "1231231232";
 
         Book book = Book.of(bookIsbn, "Title", "Author", 9.90,"Me");
 
