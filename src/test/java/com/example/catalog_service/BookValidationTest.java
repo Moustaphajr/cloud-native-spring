@@ -25,11 +25,12 @@ public class BookValidationTest {
 
     @Test
     void shouldValidateBookWithValidData() {
-      Book book=new Book(
+      Book book=Book.of(
               "1234567890",
               "Effective Java",
               "Joshua Bloch",
-              45.99
+              45.99,
+                "Me"
       );
       Set<ConstraintViolation<Book>> violations = validator.validate(book);
       assertThat(violations).isEmpty();
@@ -37,11 +38,12 @@ public class BookValidationTest {
 
     @Test
     void shouldNotValidateBookWithInvalidIsbn() {
-        Book book = new Book(
+        Book book = Book.of(
                 "12345", // Invalid ISBN
                 "Effective Java",
                 "Joshua Bloch",
-                45.99
+                45.99,
+                "Me"
         );
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
         assertThat(violations).hasSize(1);

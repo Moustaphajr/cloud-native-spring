@@ -6,8 +6,9 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+
 @RequestMapping("books")
+@RestController
 public class BookController {
     private final BookService bookService;
 
